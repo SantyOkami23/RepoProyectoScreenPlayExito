@@ -11,6 +11,7 @@ import io.cucumber.java.en.When;
 import java.io.IOException;
 import java.util.List;
 
+import static com.sofkau.tasks.FiltrarProductoMenorPrecio.filtrarProductoMenorPrecio;
 import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
 import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
@@ -37,22 +38,28 @@ public class CompraProductoStepDefinition  extends Configuracion {
                         .conElUsuario(credenciales.get(0))
                         .yConLaContrasenna(credenciales.get(1))
 
-
         );
-
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-
-        seleccionMercado()
-
-        );
-
-
     }
 
 
     @When("Selecciona un producto de una categoria")
-    public void selecciona_un_producto_de_una_categoria() {
+    public void selecciona_un_producto_de_una_categoria() throws InterruptedException {
+
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                seleccionMercado()
+                        .buscaProducto("Mortadela")
+        );
+
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                filtrarProductoMenorPrecio()
+
+        );
+
+
+
+
 
     }
 
