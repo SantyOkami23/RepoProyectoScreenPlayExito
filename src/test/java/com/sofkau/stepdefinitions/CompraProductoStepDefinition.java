@@ -14,6 +14,7 @@ import java.util.List;
 import static com.sofkau.tasks.FiltrarProductoMenorPrecio.filtrarProductoMenorPrecio;
 import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
 import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
+import static com.sofkau.tasks.SeleccionarTipoDeEnvio.seleccionarTipoDeEnvio;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -58,9 +59,18 @@ public class CompraProductoStepDefinition  extends Configuracion {
         );
 
 
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                seleccionarTipoDeEnvio()
+        );
+/*
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                filtrarProductoMenorPrecio()
 
+        );
 
-
+        */
     }
 
 
