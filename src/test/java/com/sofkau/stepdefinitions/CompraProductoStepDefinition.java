@@ -11,6 +11,8 @@ import io.cucumber.java.en.When;
 import java.io.IOException;
 import java.util.List;
 
+import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
+import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
@@ -22,26 +24,28 @@ public class CompraProductoStepDefinition  extends Configuracion {
     }
 
     @Given("El usuario esta en la pagina del exito con su cuenta registrada")
-    public void el_usuario_esta_en_la_pagina_del_exito_con_su_cuenta_registrada() {
+    public void el_usuario_esta_en_la_pagina_del_exito_con_su_cuenta_registrada() throws InterruptedException {
 
         configurarNavegador();
 
         theActorInTheSpotlight().wasAbleTo(
                  new AbrirPaginaInicial()
-
         );
 
         theActorInTheSpotlight().attemptsTo(
-                new IniciarSesion()
+                iniciarSesion()
                         .conElUsuario(credenciales.get(0))
                         .yConLaContrasenna(credenciales.get(1))
+
+
         );
 
+        Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
-              new SeleccionMercado()
+
+        seleccionMercado()
 
         );
-
 
 
     }
