@@ -1,4 +1,5 @@
 package com.sofkau.stepdefinitions;
+import com.sofkau.questions.MensajePaginaCompra;
 import com.sofkau.setup.Configuracion;
 import com.sofkau.tasks.AbrirPaginaInicial;
 import com.sofkau.tasks.IniciarSesion;
@@ -6,9 +7,12 @@ import com.sofkau.tasks.SeleccionMercado;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.log4j.Logger;
+import org.junit.jupiter.api.Assertions;
 import java.io.IOException;
 import java.util.List;
-
+import static com.google.common.base.Predicates.equalTo;
+import static com.sofkau.questions.MensajePaginaCompra.mensajePaginaCompra;
 import static com.sofkau.tasks.AgregarProductoCarrito.agregarProductoCarrito;
 import static com.sofkau.tasks.DigirseAlCarrito.digirseAlCarrito;
 import static com.sofkau.tasks.ElegirFechaEntrega.elegirFechaEntrega;
@@ -21,6 +25,7 @@ import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
 import static com.sofkau.tasks.SeleccionarMetodoDePago.seleccionarMetodoDePago;
 import static com.sofkau.tasks.SeleccionarTipoDeEnvio.seleccionarTipoDeEnvio;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
+import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 
 
@@ -28,6 +33,7 @@ public class CompraProductoStepDefinition  extends Configuracion {
 
     private List<String> credenciales = getUserPasword();
 
+    private static final Logger LOGGER = Logger.getLogger(String.valueOf(CompraProductoStepDefinition.class));
     public CompraProductoStepDefinition() throws IOException {
     }
 
@@ -120,6 +126,20 @@ public class CompraProductoStepDefinition  extends Configuracion {
     @Then("Se deberia observar el producto seleccionado en el carrito de compras")
     public void se_deberia_observar_el_producto_seleccionado_en_el_carrito_de_compras() {
 
+        try {
+            theActorInTheSpotlight().should(
+                    seeThat(mensajePaginaCompra(), equalTo("Detalles de tu compra"))
+            );
+
+            LOGGER.info("Prueba realizada con exito ");
+
+        } catch (Exception e) {
+            LOGGER.info(" Fallo al realizar la assercion");
+            Assertions.fail();
+        }
+        }
     }
 
-}
+
+
+

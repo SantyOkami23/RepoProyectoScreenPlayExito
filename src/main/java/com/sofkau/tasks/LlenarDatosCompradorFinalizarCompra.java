@@ -62,6 +62,8 @@ public class LlenarDatosCompradorFinalizarCompra  implements Task {
                 // CLICKS
                 Click.on (CLICK_ACEPTO_TERMINOS_CONDICIONES),
                 Click.on (CLICK_AUTORIZO_TRATAMIENTO_DATOS),
+              //  Click.on (CLICK_ACEPTO_TERMINOS_CONDICIONES),
+
 
                 Click.on (CLICK_BOTON_CONTINUAR)
               //  Click.on (CLICK_BOTON_CONTINUAR)
