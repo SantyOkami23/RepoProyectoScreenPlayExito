@@ -18,6 +18,7 @@ import static com.sofkau.tasks.IrAPagar.irAPagar;
 import static com.sofkau.tasks.LlenarDatosCompradorFinalizarCompra.llenarDatosCompradorFinalizarCompra;
 import static com.sofkau.tasks.Refrescar.refrescar;
 import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
+import static com.sofkau.tasks.SeleccionarMetodoDePago.seleccionarMetodoDePago;
 import static com.sofkau.tasks.SeleccionarTipoDeEnvio.seleccionarTipoDeEnvio;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
@@ -102,6 +103,10 @@ public class CompraProductoStepDefinition  extends Configuracion {
 
         theActorInTheSpotlight().attemptsTo(
                 elegirFechaEntrega()
+        );
+
+        theActorInTheSpotlight().attemptsTo(
+                seleccionarMetodoDePago()
         );
 
 
