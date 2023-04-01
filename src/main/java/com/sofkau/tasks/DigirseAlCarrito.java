@@ -4,7 +4,7 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 
-import static com.sofkau.ui.IconoDirigirseAlCarrito.CLICK_DIRIGIRSE_AL_CARRITO;
+import static com.sofkau.ui.PaginaDirigirseAlCarrito.CLICK_DIRIGIRSE_AL_CARRITO;
 
 public class DigirseAlCarrito  implements Task {
     @Override

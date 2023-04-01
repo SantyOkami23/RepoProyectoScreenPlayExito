@@ -13,6 +13,9 @@ import static com.sofkau.tasks.AgregarProductoCarrito.agregarProductoCarrito;
 import static com.sofkau.tasks.DigirseAlCarrito.digirseAlCarrito;
 import static com.sofkau.tasks.FiltrarProductoMenorPrecio.filtrarProductoMenorPrecio;
 import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
+import static com.sofkau.tasks.IrAPagar.irAPagar;
+import static com.sofkau.tasks.LlenarDatosCompradorFinalizarCompra.llenarDatosCompradorFinalizarCompra;
+import static com.sofkau.tasks.Refrescar.refrescar;
 import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
 import static com.sofkau.tasks.SeleccionarTipoDeEnvio.seleccionarTipoDeEnvio;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
@@ -72,9 +75,27 @@ public class CompraProductoStepDefinition  extends Configuracion {
                 agregarProductoCarrito()
         );
 
-        Thread.sleep(5000);
+
         theActorInTheSpotlight().attemptsTo(
                 digirseAlCarrito()
+        );
+
+        theActorInTheSpotlight().attemptsTo(
+                irAPagar()
+        );
+
+
+        theActorInTheSpotlight().attemptsTo(
+                refrescar()
+        );
+
+
+        theActorInTheSpotlight().attemptsTo(
+                llenarDatosCompradorFinalizarCompra()
+                        .conElNombre("Juan")
+                        .conElApellido("Perez")
+                        .conElCelular("3148271191")
+                        .conElNumeroCedula("1004776890")
         );
 
 

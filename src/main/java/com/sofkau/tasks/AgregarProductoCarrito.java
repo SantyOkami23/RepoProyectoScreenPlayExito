@@ -21,7 +21,6 @@ public class AgregarProductoCarrito  implements Task {
                 WaitUntil.the(CLICK_SELECCIONAR_PRIMER_PRODUCTO, isCurrentlyEnabled()),
                 WaitUntil.the(CLICK_SELECCIONAR_PRIMER_PRODUCTO,isClickable()),
                 Click.on (CLICK_SELECCIONAR_PRIMER_PRODUCTO)
-
         );
     }
 
