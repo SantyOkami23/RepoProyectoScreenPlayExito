@@ -1,5 +1,4 @@
 package com.sofkau.stepdefinitions;
-
 import com.sofkau.setup.Configuracion;
 import com.sofkau.tasks.AbrirPaginaInicial;
 import com.sofkau.tasks.IniciarSesion;
@@ -7,16 +6,18 @@ import com.sofkau.tasks.SeleccionMercado;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
 import java.io.IOException;
 import java.util.List;
 
+import static com.sofkau.tasks.AgregarProductoCarrito.agregarProductoCarrito;
+import static com.sofkau.tasks.DigirseAlCarrito.digirseAlCarrito;
 import static com.sofkau.tasks.FiltrarProductoMenorPrecio.filtrarProductoMenorPrecio;
 import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
 import static com.sofkau.tasks.SeleccionMercado.seleccionMercado;
 import static com.sofkau.tasks.SeleccionarTipoDeEnvio.seleccionarTipoDeEnvio;
 import static com.sofkau.util.LecturaFileProperties.getUserPasword;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+
 
 public class CompraProductoStepDefinition  extends Configuracion {
 
@@ -46,31 +47,41 @@ public class CompraProductoStepDefinition  extends Configuracion {
     @When("Selecciona un producto de una categoria")
     public void selecciona_un_producto_de_una_categoria() throws InterruptedException {
 
+
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                seleccionarTipoDeEnvio()
+                        .enseleccionarCiudad("Cali")
+                        .enseleccionarTiendaCiudad("Exito La Flora")
+        );
+
         Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
                 seleccionMercado()
                         .buscaProducto("Mortadela")
         );
 
+
         Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
                 filtrarProductoMenorPrecio()
 
         );
-
+        Thread.sleep(5000);
+        theActorInTheSpotlight().attemptsTo(
+                agregarProductoCarrito()
+        );
 
         Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
-                seleccionarTipoDeEnvio()
-        );
-/*
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                filtrarProductoMenorPrecio()
-
+                digirseAlCarrito()
         );
 
-        */
+
+
+
+
+
     }
 
 

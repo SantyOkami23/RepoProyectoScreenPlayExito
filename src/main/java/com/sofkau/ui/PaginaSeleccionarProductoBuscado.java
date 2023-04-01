@@ -6,12 +6,8 @@ public class PaginaSeleccionarProductoBuscado  {
 
 
     public static final Target CLIQUEABLE_FILTRAR_PRODUCTO = Target.the("Click en filtrar producto")
-            .located(By.cssSelector(".vtex-search-result-3-x-orderByText"));
+            .located(By.xpath("(//span[@class='vtex-search-result-3-x-orderByText c-muted-2'])[1]"));
     public static final Target CLIQUEABLE_PRODUCTO_MENOR_COSTO = Target.the("Click en menor costo")
-            .located(By.cssSelector("button.hover-bg-muted-5:nth-child(5)"));
-
-
-
-
+            .located(By.xpath("//button[normalize-space()='Menor precio primero']"));
 
 }
