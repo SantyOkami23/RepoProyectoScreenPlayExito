@@ -1,5 +1,4 @@
 package com.sofkau.ui;
-
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 
@@ -23,11 +22,8 @@ public class PaginaDatosCompradorFinalizarCompra {
     public static final Target CLICK_AUTORIZO_TRATAMIENTO_DATOS= Target.the("Click en autotizo tratamiento de datos  para finalizar la compra")
             .located(By.xpath("(//input[@type='checkbox'])[4]"));
 
-
-
-
-
-
+    public static final Target CLICK_BOTON_CONTINUAR = Target.the("Boton continuar para finalizar la compra")
+            .located(By.id("go-to-shipping"));
 
 
 }

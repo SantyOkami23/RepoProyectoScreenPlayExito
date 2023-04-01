@@ -11,6 +11,7 @@ import java.util.List;
 
 import static com.sofkau.tasks.AgregarProductoCarrito.agregarProductoCarrito;
 import static com.sofkau.tasks.DigirseAlCarrito.digirseAlCarrito;
+import static com.sofkau.tasks.ElegirFechaEntrega.elegirFechaEntrega;
 import static com.sofkau.tasks.FiltrarProductoMenorPrecio.filtrarProductoMenorPrecio;
 import static com.sofkau.tasks.IniciarSesion.iniciarSesion;
 import static com.sofkau.tasks.IrAPagar.irAPagar;
@@ -74,12 +75,12 @@ public class CompraProductoStepDefinition  extends Configuracion {
         theActorInTheSpotlight().attemptsTo(
                 agregarProductoCarrito()
         );
-
+        Thread.sleep(5000);
 
         theActorInTheSpotlight().attemptsTo(
                 digirseAlCarrito()
         );
-
+        Thread.sleep(5000);
         theActorInTheSpotlight().attemptsTo(
                 irAPagar()
         );
@@ -93,11 +94,15 @@ public class CompraProductoStepDefinition  extends Configuracion {
         theActorInTheSpotlight().attemptsTo(
                 llenarDatosCompradorFinalizarCompra()
                         .conElNombre("Juan")
-                        .conElApellido("Perez")
                         .conElCelular("3148271191")
                         .conElNumeroCedula("1004776890")
+                        .conElApellido("Perez")
         );
 
+
+        theActorInTheSpotlight().attemptsTo(
+                elegirFechaEntrega()
+        );
 
 
 
