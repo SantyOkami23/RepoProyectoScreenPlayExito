@@ -4,7 +4,6 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-
 import static com.sofkau.ui.PaginaDatosCompradorFinalizarCompra.CAMPO_NOMBRE;
 import static com.sofkau.ui.PaginaElegirMetodoDePago.BOTON_FINALIZAR_PAGO;
 import static com.sofkau.ui.PaginaElegirMetodoDePago.BOTON_METODO_PAGO_PSE;
