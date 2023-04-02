@@ -45,6 +45,7 @@ public class Configuracion {
     }
 
     protected void quitarDriver() {
+        webDriver.close();
         webDriver.quit();
     }
 

@@ -91,65 +91,13 @@
 
 1 Scenarios (?[31m1 failed?[0m)
 3 Steps (?[31m1 failed?[0m, ?[36m1 skipped?[0m, ?[32m1 passed?[0m)
-0m29,378s
+1m8,438s
 
 
-org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=111.0.5563.147)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-DPVG4GA8', ip: '192.168.1.38', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:53551}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6e919ef4c92f9d5ca37a0e7c26d71b8e
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at net.serenitybdd.core.pages.WebElementFacadeImpl.click(WebElementFacadeImpl.java:1230)
-	at net.serenitybdd.screenplay.actions.ClickOnTarget.performAs(ClickOnTarget.java:13)
-	at net.serenitybdd.screenplay.actions.ClickOnTarget$ByteBuddy$TU1lu7oC.performAs$accessor$eUJpPyaA(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)
-	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:468)
-	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:441)
-	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:197)
-	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:184)
-	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)
-	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at net.serenitybdd.screenplay.actions.ClickOnTarget$ByteBuddy$TU1lu7oC.performAs(Unknown Source)
-	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:248)
-	at net.serenitybdd.screenplay.Actor.perform(Actor.java:229)
-	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:175)
-	at com.sofkau.tasks.SeleccionarTipoDeEnvio.performAs(SeleccionarTipoDeEnvio.java:29)
-	at com.sofkau.tasks.SeleccionarTipoDeEnvio$ByteBuddy$9rrnDESM.performAs$accessor$XeTEJ3dy(Unknown Source)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at net.thucydides.core.steps.StepInterceptor.invokeMethod(StepInterceptor.java:488)
-	at net.thucydides.core.steps.StepInterceptor.executeTestStepMethod(StepInterceptor.java:468)
-	at net.thucydides.core.steps.StepInterceptor.runTestStep(StepInterceptor.java:441)
-	at net.thucydides.core.steps.StepInterceptor.runOrSkipMethod(StepInterceptor.java:197)
-	at net.thucydides.core.steps.StepInterceptor.testStepResult(StepInterceptor.java:184)
-	at net.thucydides.core.steps.StepInterceptor.intercept(StepInterceptor.java:77)
-	at net.thucydides.core.steps.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:51)
-	at com.sofkau.tasks.SeleccionarTipoDeEnvio$ByteBuddy$9rrnDESM.performAs(Unknown Source)
-	at net.serenitybdd.screenplay.Actor.performTask(Actor.java:248)
-	at net.serenitybdd.screenplay.Actor.perform(Actor.java:229)
-	at net.serenitybdd.screenplay.Actor.attemptsTo(Actor.java:175)
-	at com.sofkau.stepdefinitions.CompraProductoStepDefinition.selecciona_un_producto_de_una_categoria(CompraProductoStepDefinition.java:71)
+org.opentest4j.AssertionFailedError
+	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
+	at org.junit.jupiter.api.Assertions.fail(Assertions.java:98)
+	at com.sofkau.stepdefinitions.CompraProductoStepDefinition.selecciona_un_producto_de_una_categoria(CompraProductoStepDefinition.java:133)
 	at ?.Selecciona un producto de una categoria(file:///C:/Users/pc/Documents/ProyectoScreenPlayExito/src/test/resources/features/comprarproducto.feature:9)
 
 
@@ -176,7 +124,7 @@ SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.5.1</a> at 1 abr. 2023 20:18:05</p>
+<a href="http://www.gradle.org">Gradle 7.5.1</a> at 1 abr. 2023 20:48:50</p>
 </div>
 </div>
 </body>

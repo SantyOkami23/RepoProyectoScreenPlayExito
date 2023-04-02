@@ -55,9 +55,10 @@ public class CompraProductoStepDefinition  extends Configuracion {
             LOGGER.info("Es mi placer informarte que se realizo el login correctamente ");
 
         } catch (Exception e) {
-            LOGGER.info("Fallo al momento de hcaer el login :c");
+            LOGGER.info("Fallo al momento de hacer el login :c");
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
         }
 
 
@@ -72,30 +73,67 @@ public class CompraProductoStepDefinition  extends Configuracion {
             theActorInTheSpotlight().attemptsTo(
                     seleccionarTipoDeEnvio()
                             .enseleccionarCiudad("Cali")
-                            .enseleccionarTiendaCiudad("Exito La Flora"),
-                    seleccionMercado()
-                            .buscaProducto("Mortadela"),
-                    filtrarProductoMenorPrecio(),
-                    agregarProductoCarrito(),
-                    digirseAlCarrito(),
-                    irAPagar(),
-                    refrescar(),
-                    llenarDatosCompradorFinalizarCompra()
-                            .conElNombre("Juan")
-                            .conElCelular("3148271191")
-                            .conElNumeroCedula("1004776890")
-                            .conElApellido("Perez"),
-                    elegirFechaEntrega(),
-                    seleccionarMetodoDePago()
-
+                            .enseleccionarTiendaCiudad("Exito La Flora")
             );
+            LOGGER.info("Seleccion de ciudad y tienda exitosa");
+
+             theActorInTheSpotlight().attemptsTo(
+                     seleccionMercado()
+                     .buscaProducto("Mortadela"));
+            LOGGER.info("Busqueda de producto exitosa");
+
+
+
+            theActorInTheSpotlight().attemptsTo(
+                    filtrarProductoMenorPrecio());
+            LOGGER.info("Filtrado de producto exitoso");
+
+            theActorInTheSpotlight().attemptsTo(
+                    agregarProductoCarrito());
+            LOGGER.info("Producto agregado al carrito exitosamente");
+
+            theActorInTheSpotlight().attemptsTo(
+                    digirseAlCarrito());
+            LOGGER.info("Se dirige al carrito de compras exitosamente");
+
+
+
+            theActorInTheSpotlight().attemptsTo(
+                    irAPagar());
+            LOGGER.info("Se dirige a pagar exitosamente");
+
+            theActorInTheSpotlight().attemptsTo(
+                    refrescar());
+            LOGGER.info("Se refresca la pagina exitosamente");
+
+            theActorInTheSpotlight().attemptsTo(
+                    llenarDatosCompradorFinalizarCompra()
+                           .conElNombre("Juan")
+                           .conElCelular("3148271191")
+                           .conElNumeroCedula("1004776890")
+                           .conElApellido("Perez"));
+            LOGGER.info("Se llenan los datos del comprador exitosamente");
+
+
+            theActorInTheSpotlight().attemptsTo(
+                           elegirFechaEntrega());
+                     LOGGER.info("Se elige la fecha de entrega exitosamente");
+
+
+                     theActorInTheSpotlight().attemptsTo(
+                    seleccionarMetodoDePago());
+            LOGGER.info("Se selecciona el metodo de pago exitosamente");
+
+
 
             LOGGER.info("Proceso de compra realizdo con exito ");
 
         } catch (Exception e) {
-            LOGGER.info(" Fallo algo al realizar la compra :c ");
+
+
             LOGGER.warn(e.getMessage());
             Assertions.fail();
+            quitarDriver();
         }
 
 
@@ -111,13 +149,17 @@ public class CompraProductoStepDefinition  extends Configuracion {
         try {
             theActorInTheSpotlight().should(
                     seeThat(mensajePaginaCompra(), equalTo("Detalles de tu compra"))
+
             );
 
+
             LOGGER.info("Prueba realizada con exito ");
+            quitarDriver();
 
         } catch (Exception e) {
             LOGGER.info(" Algo paso mal amiguito fallo al realizar la assercion :c");
             Assertions.fail();
+            quitarDriver();
         }
         }
 
