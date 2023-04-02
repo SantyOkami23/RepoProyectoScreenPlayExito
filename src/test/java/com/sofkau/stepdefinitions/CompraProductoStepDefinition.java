@@ -39,82 +39,64 @@ public class CompraProductoStepDefinition  extends Configuracion {
 
     @Given("El usuario esta en la pagina del exito con su cuenta registrada")
     public void el_usuario_esta_en_la_pagina_del_exito_con_su_cuenta_registrada() throws InterruptedException {
+        try {
+            configurarNavegador();
 
-        configurarNavegador();
+            theActorInTheSpotlight().wasAbleTo(
+                    new AbrirPaginaInicial()
+            );
+            theActorInTheSpotlight().attemptsTo(
+                    iniciarSesion()
+                            .conElUsuario(credenciales.get(0))
+                            .yConLaContrasenna(credenciales.get(1))
 
-        theActorInTheSpotlight().wasAbleTo(
-                 new AbrirPaginaInicial()
-        );
+            );
 
-        theActorInTheSpotlight().attemptsTo(
-                iniciarSesion()
-                        .conElUsuario(credenciales.get(0))
-                        .yConLaContrasenna(credenciales.get(1))
+            LOGGER.info("Es mi placer informarte que se realizo el login correctamente ");
 
-        );
+        } catch (Exception e) {
+            LOGGER.info("Fallo al momento de hcaer el login :c");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail();
+        }
+
+
+
     }
 
 
     @When("Selecciona un producto de una categoria")
     public void selecciona_un_producto_de_una_categoria() throws InterruptedException {
+        try {
 
+            theActorInTheSpotlight().attemptsTo(
+                    seleccionarTipoDeEnvio()
+                            .enseleccionarCiudad("Cali")
+                            .enseleccionarTiendaCiudad("Exito La Flora"),
+                    seleccionMercado()
+                            .buscaProducto("Mortadela"),
+                    filtrarProductoMenorPrecio(),
+                    agregarProductoCarrito(),
+                    digirseAlCarrito(),
+                    irAPagar(),
+                    refrescar(),
+                    llenarDatosCompradorFinalizarCompra()
+                            .conElNombre("Juan")
+                            .conElCelular("3148271191")
+                            .conElNumeroCedula("1004776890")
+                            .conElApellido("Perez"),
+                    elegirFechaEntrega(),
+                    seleccionarMetodoDePago()
 
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                seleccionarTipoDeEnvio()
-                        .enseleccionarCiudad("Cali")
-                        .enseleccionarTiendaCiudad("Exito La Flora")
-        );
+            );
 
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                seleccionMercado()
-                        .buscaProducto("Mortadela")
-        );
+            LOGGER.info("Proceso de compra realizdo con exito ");
 
-
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                filtrarProductoMenorPrecio()
-
-        );
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                agregarProductoCarrito()
-        );
-        Thread.sleep(5000);
-
-        theActorInTheSpotlight().attemptsTo(
-                digirseAlCarrito()
-        );
-        Thread.sleep(5000);
-        theActorInTheSpotlight().attemptsTo(
-                irAPagar()
-        );
-
-
-        theActorInTheSpotlight().attemptsTo(
-                refrescar()
-        );
-
-
-        theActorInTheSpotlight().attemptsTo(
-                llenarDatosCompradorFinalizarCompra()
-                        .conElNombre("Juan")
-                        .conElCelular("3148271191")
-                        .conElNumeroCedula("1004776890")
-                        .conElApellido("Perez")
-        );
-
-
-        theActorInTheSpotlight().attemptsTo(
-                elegirFechaEntrega()
-        );
-
-        theActorInTheSpotlight().attemptsTo(
-                seleccionarMetodoDePago()
-        );
-
+        } catch (Exception e) {
+            LOGGER.info(" Fallo algo al realizar la compra :c ");
+            LOGGER.warn(e.getMessage());
+            Assertions.fail();
+        }
 
 
 
@@ -134,10 +116,11 @@ public class CompraProductoStepDefinition  extends Configuracion {
             LOGGER.info("Prueba realizada con exito ");
 
         } catch (Exception e) {
-            LOGGER.info(" Fallo al realizar la assercion");
+            LOGGER.info(" Algo paso mal amiguito fallo al realizar la assercion :c");
             Assertions.fail();
         }
         }
+
     }
 
 
