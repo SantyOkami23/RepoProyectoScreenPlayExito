@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Comprar producto exito" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-04-02T00:47:30" hostname="LAPTOP-DPVG4GA8" time="67.71">
+<testsuite name="Comprar producto exito" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-04-02T00:56:53" hostname="LAPTOP-DPVG4GA8" time="88.585">
   <properties/>
-  <testcase name="Comprar producto exito" classname="Comprar producto exito" time="67.71">
-    <failure message="org.opentest4j.AssertionFailedError" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError
-	at app//org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:35)
-	at app//org.junit.jupiter.api.Assertions.fail(Assertions.java:98)
-	at app//com.sofkau.stepdefinitions.CompraProductoStepDefinition.selecciona_un_producto_de_una_categoria(CompraProductoStepDefinition.java:133)
-	at ✽.Selecciona un producto de una categoria(file:///C:/Users/pc/Documents/ProyectoScreenPlayExito/src/test/resources/features/comprarproducto.feature:9)
-</failure>
-  </testcase>
-  <system-out><![CDATA[2023-04-01 20:47:51 INFO  CompraProductoStepDefinition:55 Es mi placer informarte que se realizo el login correctamente 
-2023-04-01 20:48:03 INFO  CompraProductoStepDefinition:77 Seleccion de ciudad y tienda exitosa
-2023-04-01 20:48:09 INFO  CompraProductoStepDefinition:82 Busqueda de producto exitosa
-2023-04-01 20:48:13 INFO  CompraProductoStepDefinition:88 Filtrado de producto exitoso
-2023-04-01 20:48:15 INFO  CompraProductoStepDefinition:92 Producto agregado al carrito exitosamente
-2023-04-01 20:48:24 INFO  CompraProductoStepDefinition:96 Se dirige al carrito de compras exitosamente
-2023-04-01 20:48:25 INFO  CompraProductoStepDefinition:102 Se dirige a pagar exitosamente
-2023-04-01 20:48:30 INFO  CompraProductoStepDefinition:106 Se refresca la pagina exitosamente
-2023-04-01 20:48:37 INFO  CompraProductoStepDefinition:131  Fallo algo al realizar la compra :c 
-2023-04-01 20:48:37 WARN  CompraProductoStepDefinition:132 no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=111.0.5563.147)
+  <testcase name="Comprar producto exito" classname="Comprar producto exito" time="88.585">
+    <failure message="java.lang.AssertionError: Cannot locate an element using xpath=(//strong[normalize-space()='Detalles de tu compra'])[1]&#10;For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html&#10;Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'&#10;System info: host: 'LAPTOP-DPVG4GA8', ip: '192.168.1.38', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'&#10;Driver info: driver.version: RemoteWebDriver" type="java.lang.AssertionError">java.lang.AssertionError: Cannot locate an element using xpath=(//strong[normalize-space()='Detalles de tu compra'])[1]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'LAPTOP-DPVG4GA8', ip: '192.168.1.38', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\pc\AppData\Local\T...}, goog:chromeOptions: {debuggerAddress: localhost:57167}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: ignore, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: ea5afc964af87ba32eb22421f369481a
-*** Element info: {Using=id, value=client-first-name}
+Driver info: driver.version: RemoteWebDriver
+	at net.serenitybdd.screenplay.ErrorTally.throwSummaryExceptionFrom(ErrorTally.java:36)
+	at net.serenitybdd.screenplay.ErrorTally.reportAnyErrors(ErrorTally.java:30)
+	at net.serenitybdd.screenplay.Actor.should(Actor.java:316)
+	at com.sofkau.stepdefinitions.CompraProductoStepDefinition.se_deberia_observar_el_producto_seleccionado_en_el_carrito_de_compras(CompraProductoStepDefinition.java:150)
+	at ✽.Se deberia observar el producto seleccionado en el carrito de compras(file:///C:/Users/pc/Documents/ProyectoScreenPlayExito/src/test/resources/features/comprarproducto.feature:10)
+</failure>
+  </testcase>
+  <system-out><![CDATA[2023-04-01 20:57:14 INFO  CompraProductoStepDefinition:55 Es mi placer informarte que se realizo el login correctamente 
+2023-04-01 20:57:24 INFO  CompraProductoStepDefinition:78 Seleccion de ciudad y tienda exitosa
+2023-04-01 20:57:30 INFO  CompraProductoStepDefinition:83 Busqueda de producto exitosa
+2023-04-01 20:57:36 INFO  CompraProductoStepDefinition:89 Filtrado de producto exitoso
+2023-04-01 20:57:39 INFO  CompraProductoStepDefinition:93 Producto agregado al carrito exitosamente
+2023-04-01 20:57:48 INFO  CompraProductoStepDefinition:97 Se dirige al carrito de compras exitosamente
+2023-04-01 20:57:49 INFO  CompraProductoStepDefinition:103 Se dirige a pagar exitosamente
+2023-04-01 20:57:54 INFO  CompraProductoStepDefinition:107 Se refresca la pagina exitosamente
+2023-04-01 20:58:05 INFO  CompraProductoStepDefinition:115 Se llenan los datos del comprador exitosamente
+2023-04-01 20:58:13 INFO  CompraProductoStepDefinition:120 Se elige la fecha de entrega exitosamente
+2023-04-01 20:58:16 INFO  CompraProductoStepDefinition:125 Se selecciona el metodo de pago exitosamente
+2023-04-01 20:58:16 INFO  CompraProductoStepDefinition:129 Proceso de compra realizdo con exito 
 ]]></system-out>
-  <system-err><![CDATA[Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 11519
+  <system-err><![CDATA[Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 13835
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-abr. 01, 2023 8:47:33 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+abr. 01, 2023 8:56:55 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMACIÓN: Detected dialect: W3C
-abr. 01, 2023 8:47:33 P. M. org.openqa.selenium.remote.DesiredCapabilities chrome
+abr. 01, 2023 8:56:56 P. M. org.openqa.selenium.remote.DesiredCapabilities chrome
 INFORMACIÓN: Using `new ChromeOptions()` is preferred to `DesiredCapabilities.chrome()`
-Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 47332
+Starting ChromeDriver 111.0.5563.64 (c710e93d5b63b7095afe8c2c17df34408078439d-refs/branch-heads/5563@{#995}) on port 18421
 Only local connections are allowed.
 Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
 ChromeDriver was started successfully.
-abr. 01, 2023 8:47:35 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
+abr. 01, 2023 8:56:58 P. M. org.openqa.selenium.remote.ProtocolHandshake createSession
 INFORMACIÓN: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
